@@ -11,3 +11,7 @@
 - 547 orders have multiple reviews: deduplicated to latest review per order.
 - Delivery vs review analysis covers 95,823 of 96,478 delivered orders;
   the rest have no review or no delivery date.
+- 610 products had blank category; replaced with ‘unknown’ in Power Query (blanks were empty strings, not nulls).
+- Delivery Days is null for ~3% of orders (not delivered, or delivered with
+  missing date). Left as null on purpose so averages exclude them.
+- Power BI counts 7,826 late orders (all delivered); the SQL analysis counted 7,661 that also had a review.
